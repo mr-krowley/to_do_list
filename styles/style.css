@@ -1,8 +1,7 @@
 * {
- 
   padding: 0;
   box-sizing: border-box;
-  width: 100%;
+
   font-family: "Inter", sans-serif;
 }
 body {
@@ -17,7 +16,6 @@ h1 {
 }
 .container {
   width: 594px;
-  
   background: #ffffff;
   box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.16);
   border-radius: 16px;
@@ -30,7 +28,6 @@ form {
   justify-content: space-between;
   min-height: 87px;
   padding: 24px;
-  
 }
 .inputRecord {
   border: 1px solid #ced4da;
@@ -50,31 +47,93 @@ form {
   border: none;
   font-family: "Inter";
   font-style: normal;
-  
 }
 
 .listContainer {
   width: 594px;
   margin: 0 auto;
-  border-top:  #DEE2E6 solid 1px;
+  border-top: #dee2e6 solid 1px;
   padding: 32px 24px;
- 
-
 }
+
 li {
   padding: 0px 32px 26px;
   list-style: none;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #54595E;
+  color: #54595e;
   user-select: none;
   cursor: pointer;
   position: relative;
 }
-li::before {
+.deleteСompleted {
+  width: 214px;
+  background: #6C757D;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+}
+
+.deleteEverything {
+  width: 131px;
+  background: #dc3545;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* li::before {
   content: "";
   position: absolute;
   height: 16px;
@@ -84,32 +143,30 @@ li::before {
   background-position: center;
   top: 3px;
   left: 0px
-}
+} 
 
-
-
+ 
 li.checked::before {
   background-image: url(/image/checkboxSelected.svg);
   background-repeat: no-repeat;
   text-decoration-line: line-through;
   color: #54595E;
-}
+} */
 
-li.checked {
+/* li.checked {
   text-decoration-line: line-through;
   color: #54595E;
   opacity: 0.5;
-}
+} */
 
-span {
+/* span {
   position: absolute;
   left: 525px;
   top: 0;
   font-weight: 400;
   font-size: 16px;
-  line-height: 21px;  
+  line-height: 21px;
 }
-span:hover{
+span:hover {
   font-weight: 700;
-
-}
+} */
