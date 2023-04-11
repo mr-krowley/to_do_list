@@ -1,5 +1,115 @@
 * {
-  margin: 0;
+ 
   padding: 0;
   box-sizing: border-box;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+body {
+  background: #f5f5f5;
+}
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 70px;
+  color: #000000;
+}
+.container {
+  width: 594px;
+  
+  background: #ffffff;
+  box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.16);
+  border-radius: 16px;
+  margin: 0 auto;
+}
+form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  min-height: 87px;
+  padding: 24px;
+  
+}
+.inputRecord {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  width: 356px;
+  padding: 0 14px;
+}
+.addRecord {
+  width: 166px;
+  background: #272829;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  
+}
+
+.listContainer {
+  width: 594px;
+  margin: 0 auto;
+  border-top:  #DEE2E6 solid 1px;
+  padding: 32px 24px;
+ 
+
+}
+li {
+  padding: 0px 32px 26px;
+  list-style: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #54595E;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+li::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-image: url(/image/checbox.svg);
+  background-size: cover;
+  background-position: center;
+  top: 3px;
+  left: 0px
+}
+
+
+
+li.checked::before {
+  background-image: url(/image/checkboxSelected.svg);
+  background-repeat: no-repeat;
+  text-decoration-line: line-through;
+  color: #54595E;
+}
+
+li.checked {
+  text-decoration-line: line-through;
+  color: #54595E;
+  opacity: 0.5;
+}
+
+span {
+  position: absolute;
+  left: 525px;
+  top: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;  
+}
+span:hover{
+  font-weight: 700;
+
 }
