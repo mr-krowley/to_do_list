@@ -57,6 +57,7 @@ form {
 }
 
 li {
+  display: flex;
   padding: 0px 32px 26px;
   list-style: none;
   font-family: "Inter";
@@ -68,6 +69,14 @@ li {
   user-select: none;
   cursor: pointer;
   position: relative;
+}
+label{
+  flex-basis: 95%;
+}
+.delete{
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 .deleteСompleted {
   width: 214px;
