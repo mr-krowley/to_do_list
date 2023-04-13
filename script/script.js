@@ -45,7 +45,7 @@ const creatingATask = (obj) => {
 }
 // функция перебора и отрисовки li  в  listContainer
 function paintTasc() {
-  toDoList.innerHTML = "";
+  listContainer.innerHTML = "";
   toDoList.forEach(function (elem) {
     listContainer.append(creatingATask(elem));
    
