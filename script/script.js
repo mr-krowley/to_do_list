@@ -1,11 +1,15 @@
+
 const inputRecord = document.querySelector(".inputRecord"); // получили импут с текстом
 const addRecord = document.querySelector(".addRecord"); // получили кнопку добавить
 const listContainer = document.querySelector(".listContainer"); //получили ul контэнер для задач 
 const form = document.querySelector("#form");
 
-let toDoList = []; //пустой масив для хранения обьектов newTodo
+let toDoList = JSON.parse(localStorage.getItem("toDoList")) ?? []; // если массив не пустой 
+//при загрузке приложения получает данные из локала по ключу "toDoList" и парсим их обратно и отображает дело
 
-//функция сохранения новых дел
+console.log(toDoList);
+
+//функция сохранения новых дел кнопка добавить
 let preservation = (e) => {
   e.preventDefault();
   const newTodo = {
@@ -16,21 +20,6 @@ let preservation = (e) => {
   toDoList.push(newTodo);
   paintTasc(toDoList);
 };
-
-//функция добавление дел в ul как li
-// const caseKeeping = () => {
-//   let displayMessage = "";
-//   toDoList.forEach(function (item, index) {
-//     displayMessage += `
-//     <li class="checked" >
-//     <input type="checkbox" id"item_${index}">
-//     <label for="item_${index}">${item.todo}</label>   
-//     <button class="delete">❌</button>
-//     </li>
-//     `;
-//     listContainer.innerHTML = displayMessage;
-//   });
-// };
 
 // создание li в ul 
 const creatingATask = (obj) => {
@@ -43,23 +32,48 @@ const creatingATask = (obj) => {
     `
   return displayMessage;
 }
+
 // функция перебора и отрисовки li  в  listContainer
 function paintTasc() {
   listContainer.innerHTML = "";
+  // сохраняем наше дело в локол стореч при это не забывааем переделать обьект в строку
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
   toDoList.forEach(function (elem) {
     listContainer.append(creatingATask(elem));
-   
+    //зачистка инпута после добавления дела
+    document.getElementById("inputRecord").value = "";
   });
-   
+}
+
+//функция удаления завершонных дел
+let remoteCompleted = () => {
+ 
+}
+
+//функция удаления всех дел 
+let deleteToDoList = (arr) => {
+  toDoList = [];
+  paintTasc();
+  
 }
 
 
-paintTasc(toDoList);
 
 
+
+
+
+paintTasc();
+
+// for (const delo of toDoList) {
+//   paintTasc(delo);
+// }
 
 
 
 //прослушки
 //form.addEventListener("click", preservation);
 addRecord.addEventListener("click", preservation);
+deleteСompleted.addEventListener("click", remoteCompleted);
+deleteEverything.addEventListener("click", deleteToDoList);
+
