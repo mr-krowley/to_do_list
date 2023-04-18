@@ -29,21 +29,57 @@ let preservation = (e) => {
 const creatingATask = (obj) => {
   let displayMessage = document.createElement("li");
   displayMessage.innerHTML = `
-    <input class="checkbox" type="checkbox">
-    <label for="index">${obj.todo}</label>   
+    <input id="checkbox" class="checkbox" type="checkbox">
+    <label for="checkbox" >${obj.todo}</label>   
     <button class="delete">❌</button>
     `;
   const checkbox = displayMessage.querySelector(".checkbox"); //нашли чек бокс
   const deleteOne = displayMessage.querySelector(".delete"); // нашли делете
   //тут же прослушки на события
-  checkbox.addEventListener("change", () => taggleCheck(obj.id));
+  checkbox.addEventListener("change", (evt) => taggleCheck(obj.id, evt) );
   checkbox.checked = obj.checked;
   deleteOne.addEventListener("click", () => DelOne(taggleCheck(obj.id)));
   return displayMessage;
 }
 
-//функция замена чекет
-function taggleCheck(id) {
+/////тоже самое что и  creatingATask
+function aaaa(obj) {
+  let displayMessage = document.createElement("li");
+  let input = document.createElement("input");
+  input.id = "checkbox";
+  input.class = "checkbox";
+  input.type = "checkbox";
+
+  let label = document.createElement("label");
+  label.for = "checkbox";
+  label.textContent = obj.todo;
+
+  let button = document.createElement("button");
+  button.class = "delete";
+  button.textContent = "❌";
+
+  displayMessage.append(input, label, button);
+
+  //тут же прослушки на события
+  input.addEventListener("change", (evt) => taggleCheck(obj.id, evt));
+  input.checked = obj.checked;
+  button.addEventListener("click", () => DelOne(taggleCheck(obj.id)));
+  return displayMessage;
+}
+
+
+
+
+
+
+
+
+
+
+//функция замена чекет  (evt что бы добавить класс для label  "checkText")
+function taggleCheck(id, evt) {
+  console.log(evt.target.nextSibling.nextSibling);
+  evt.target.nextSibling.nextSibling.classList.add("checkText");
   // нахожу обьекты по йди
   let idValue = toDoList.find((elem) => elem.id === id);
   // меняю их чекет на противоположный 
@@ -57,7 +93,7 @@ function paintTasc() {
   // сохраняем наше дело в локол стореч при это не забывааем переделать обьект в строку
   localStorage.setItem(KEY_KEY , JSON.stringify(toDoList));
   toDoList.forEach(function (elem) {
-    listContainer.append(creatingATask(elem));
+    listContainer.append(aaaa(elem));
     //зачистка инпута после добавления дела
     document.getElementById("inputRecord").value = "";
   });

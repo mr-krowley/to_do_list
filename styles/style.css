@@ -105,77 +105,64 @@ label{
   font-family: "Inter";
   font-style: normal;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* li::before {
-  content: "";
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  background-image: url(/image/checbox.svg);
-  background-size: cover;
-  background-position: center;
-  top: 3px;
-  left: 0px
-} 
-
- 
-li.checked::before {
-  background-image: url(/image/checkboxSelected.svg);
-  background-repeat: no-repeat;
-  text-decoration-line: line-through;
-  color: #54595E;
-} */
-
-/* li.checked {
-  text-decoration-line: line-through;
-  color: #54595E;
-  opacity: 0.5;
-} */
-
-/* span {
-  position: absolute;
-  left: 525px;
-  top: 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 21px;
+.checkText{
+  color: red;
+  text-decoration: line-through;
 }
-span:hover {
-  font-weight: 700;
-} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #checkbox:checked~.label {
+    text-decoration: line-through; */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
