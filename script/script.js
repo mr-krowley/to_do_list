@@ -34,9 +34,11 @@ const creatingATask = (obj) => {
     <button class="delete">❌</button>
     `;
   const checkbox = displayMessage.querySelector(".checkbox"); //нашли чек бокс
-  //тут же прослушка на событие
+  const deleteOne = displayMessage.querySelector(".delete"); // нашли делете
+  //тут же прослушки на события
   checkbox.addEventListener("change", () => taggleCheck(obj.id));
   checkbox.checked = obj.checked;
+  deleteOne.addEventListener("click", () => DelOne(taggleCheck(obj.id)));
   return displayMessage;
 }
 
@@ -73,7 +75,12 @@ let deleteToDoList = () => {
   paintTasc();
   
 }
-//
+//функция удаления на кнопку крестик
+function DelOne(id) {
+  let myIndex = toDoList.findIndex((el) => el.id === id);
+  toDoList.splice(myIndex, 1);
+  paintTasc();
+}
 
 
 
