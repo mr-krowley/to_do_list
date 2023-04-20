@@ -110,6 +110,10 @@ label{
   text-decoration: line-through;
 }
 
+input:checked ~ label {
+  text-decoration: line-through;
+}
+
 
 
 

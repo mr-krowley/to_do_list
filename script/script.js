@@ -25,7 +25,7 @@ let preservation = (e) => {
   paintTasc(toDoList);
 };
 
-// создание li в ul 
+//  функция создание li в ul 
 const creatingATask = (obj) => {
   let displayMessage = document.createElement("li");
   displayMessage.innerHTML = `
@@ -42,37 +42,30 @@ const creatingATask = (obj) => {
   return displayMessage;
 }
 
-/////тоже самое что и  creatingATask
-function aaaa(obj) {
-  let displayMessage = document.createElement("li");
-  let input = document.createElement("input");
-  input.id = "checkbox";
-  input.class = "checkbox";
-  input.type = "checkbox";
+// /////тоже самое что и  creatingATask
+// function aaaa(obj) {
+//   let displayMessage = document.createElement("li");
+//   let input = document.createElement("input");
+//   input.id = "checkbox";
+//   input.class = "checkbox";
+//   input.type = "checkbox";
 
-  let label = document.createElement("label");
-  label.for = "checkbox";
-  label.textContent = obj.todo;
+//   let label = document.createElement("label");
+//   label.for = "checkbox";
+//   label.textContent = obj.todo;
 
-  let button = document.createElement("button");
-  button.class = "delete";
-  button.textContent = "❌";
+//   let button = document.createElement("button");
+//   button.class = "delete";
+//   button.textContent = "❌";
 
-  displayMessage.append(input, label, button);
+//   displayMessage.append(input, label, button);
 
-  //тут же прослушки на события
-  input.addEventListener("change", (evt) => taggleCheck(obj.id, evt));
-  input.checked = obj.checked;
-  button.addEventListener("click", () => DelOne(taggleCheck(obj.id)));
-  return displayMessage;
-}
-
-
-
-
-
-
-
+//   //тут же прослушки на события
+//   input.addEventListener("change", (evt) => taggleCheck(obj.id, evt));
+//   input.checked = obj.checked;
+//   button.addEventListener("click", () => DelOne(taggleCheck(obj.id)));
+//   return displayMessage;
+// }
 
 
 
@@ -93,7 +86,7 @@ function paintTasc() {
   // сохраняем наше дело в локол стореч при это не забывааем переделать обьект в строку
   localStorage.setItem(KEY_KEY , JSON.stringify(toDoList));
   toDoList.forEach(function (elem) {
-    listContainer.append(aaaa(elem));
+    listContainer.append(creatingATask(elem));
     //зачистка инпута после добавления дела
     document.getElementById("inputRecord").value = "";
   });
@@ -118,10 +111,12 @@ function DelOne(id) {
   paintTasc();
 }
 
+// самовызывающаяся функция main точкa входа в програму
+(function main() {
+ paintTasc();
+})();
 
 
-console.log(toDoList);
-paintTasc();
 
 //прослушки
 addRecord.addEventListener("click", preservation);
